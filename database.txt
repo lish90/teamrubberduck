@@ -1,0 +1,504 @@
+SQL Code for Databases Assignment Part 3
+
+Table structure for Behaviour_Management
+
+CREATE TABLE Behaviour_Management (
+  Student_ID int(11) NOT NULL,
+  Attendance_Percentage decimal(5,1) NOT NULL,
+  Plus_Points int(100) NOT NULL,
+  Minus_Points int(100) NOT NULL
+);
+
+INSERT INTO Behaviour_Management (Student_ID, Attendance_Percentage, Plus_Points, Minus_Points) VALUES
+(11212, '49.5', 0, -34),
+(19590, '99.9', 35, -1),
+(20232, '100.0', 31, 0),
+(24584, '100.0', 14, -2),
+(29672, '100.0', 23, 0),
+(34590, '100.0', 37, 0),
+(35782, '85.3', 17, -11),
+(40874, '95.4', 23, -1),
+(43174, '100.0', 29, -1),
+(47774, '93.9', 12, -4),
+(55590, '76.9', 3, -9),
+(55597, '79.1', 5, 4),
+(68658, '95.9', 4, 5),
+(74562, '33.9', 14, -7),
+(81619, '89.1', 25, 0),
+(81754, '99.0', 12, 0),
+(86753, '98.9', 20, -1);
+
+
+behaviour_report view
+-- (See below for the actual view)
+
+CREATE TABLE behaviour_report (
+student_ID int(11)
+,student_name varchar(50)
+,plus_points int(100)
+,minus_points int(100)
+);
+
+
+
+
+
+Table structure for Co_Curricular
+
+CREATE TABLE Co_Curricular (
+  Activity_Name varchar(100) NOT NULL,
+  Teacher_ID varchar(10) NOT NULL,
+  Room_Number varchar(100) NOT NULL,
+  Day varchar(20) NOT NULL,
+  Time time NOT NULL
+);
+
+INSERT INTO Co_Curricular (Activity_Name, Teacher_ID, Room_Number, Day, Time) VALUES
+('Knitting', 'DWIN', '323', 'Monday', '16:00:00'),
+('Model UN', 'DYOR', '315', 'Tuesday', '16:00:00'),
+('Forensic Science', 'EDIN', '221', 'Wednesday', '16:00:00'),
+('Debating', 'ENIB', '315', 'Monday', '16:00:00'),
+('Cheerleading', 'JCRO', '100', 'Wednesday', '16:00:00'),
+('Theatre Production', 'JFRA', '100', 'Tuesday', '16:00:00'),
+('Young Enterprise', 'JIAN', '310', 'Wednesday', '16:00:00'),
+('Pottery', 'JROB', '323', 'Tuesday', '16:00:00'),
+('Tennis', 'MBER', '001', 'Monday', '16:00:00'),
+('Ukulele for Beginners', 'MPAN', '113', 'Monday', '16:00:00'),
+('E-Sports', 'SCAN', '222', 'Monday', '16:00:00'),
+('Year Book', 'SCLA', '323', 'Tuesday', '16:00:00');
+
+
+
+Table structure for Department
+
+CREATE TABLE Department (
+  ID int(11) NOT NULL,
+  Department_Name varchar(50) NOT NULL,
+  Head_of_Department varchar(50) NOT NULL,
+  Location_Name varchar(50) NOT NULL,
+  Subject varchar(50) NOT NULL
+);
+
+INSERT INTO Department (ID, Department_Name, Head_of_Department, Location_Name, Subject) VALUES
+(1, 'Science', 'Jade Lipson', 'Floor 2', 'Physics'),
+(3, 'Science', 'Jade Lipson', 'Floor 2', 'Chemistry'),
+(4, 'Science', 'Jade Lipson', 'Floor 2', 'Biology'),
+(5, 'Modern Languages', 'Benoit Didier', 'Floor 1', 'French'),
+(6, 'Modern Languages', 'Benoit Didier', 'Floor 1', 'Spanish'),
+(7, 'Modern Languages', 'Benoit Didier', 'Floor 1', 'Mandarin'),
+(8, 'Humanities', 'Eric Niblock', 'Floor 3', 'Economics'),
+(9, 'Humanities', 'Eric Niblock', 'Floor 3', 'Geography'),
+(10, 'Humanities', 'Eric Niblock', 'Floor 3', 'History'),
+(11, 'Art and Design', 'Della Windsor', 'Floor 3', 'Design Technology'),
+(12, 'Art and Design', 'Della Windsor', 'Floor 3', 'Design Technology'),
+(13, 'Art and Design', 'Della Windsor', 'Floor 3', 'Art'),
+(14, 'Performing Arts', 'Madeline Pandit', 'Floor 1', 'Music'),
+(15, 'Performing Arts', 'Madeline Pandit', 'Floor 1', 'Drama'),
+(16, 'Performing Arts', 'Madeline Pandit', 'Floor 1', 'Dance'),
+(18, 'Physical Education', 'Paul Peterson', '002', 'Physical Education 2'),
+(19, 'Physical Education', 'Paul Peterson', '001', 'Physical Education 1'),
+(20, 'Maths and Computing', 'Stephen Gately', 'Floor 1', 'Maths'),
+(22, 'Maths and Computing', 'Stephen Gately', 'Floor 1', 'Computer Science'),
+(23, 'English', 'Steve Harvey', 'Floor 2', 'English Language'),
+(24, 'English', 'Sandy Clayden', 'Floor 2', 'English Literature');
+
+
+Table structure for Location
+
+CREATE TABLE Location (
+  Location_Name varchar(50) NOT NULL,
+  Capacity int(100) NOT NULL,
+  Room_Number varchar(100) NOT NULL,
+  Facilities varchar(100) NOT NULL
+);
+
+INSERT INTO Location (Location_Name, Capacity, Room_Number, Facilities) VALUES
+('Multi-Use Games Area', 100, '001', 'Tennis Court, Basketball Hoops'),
+('Football Pitch', 50, '002', 'Goal Posts'),
+('Floor 1', 20, '100', 'Wall Mirror, Stage'),
+('Floor 1', 33, '101', 'Apple TV'),
+('Floor 1', 33, '112', 'Laptop Computers x15'),
+('Floor 1', 20, '113', 'Electric Keyboards, Acoustic Guitars, Wooden Ocarinas'),
+('Floor 1', 33, '174', 'Projector'),
+('Floor 2', 25, '205', 'Laptop Computers x25'),
+('Floor 2', 33, '210', 'Whiteboard, Small Library'),
+('Floor 2', 33, '211', 'Apple TV, Small Library'),
+('Floor 2', 25, '220', 'Laboratory Facilities, Gas Taps, Locked Cupboards'),
+('Floor 2', 25, '221', 'Laboratory Facilities, Microscopes, Dissection Equipment'),
+('Floor 2', 25, '222', 'Laboratory Facilities, Electronic Boards, Laptops x20'),
+('Floor 3', 33, '305', 'Projector, Giant Globe, Atlas'),
+('Floor 3', 33, '310', 'Whiteboard, Projector, Costume Box'),
+('Floor 3', 33, '315', 'Projector, Computers x15'),
+('Floor 3', 25, '323', 'Kiln, Art Equipment, Sinks x5');
+
+
+Table structure for Student
+
+CREATE TABLE Student (
+  Student_ID int(11) NOT NULL,
+  Student_Name varchar(50) NOT NULL,
+  Gender varchar(10) DEFAULT NULL,
+  DOB date DEFAULT NULL,
+  Nationality varchar(50) DEFAULT NULL
+);
+
+INSERT INTO Student (Student_ID, Student_Name, Gender, DOB, Nationality) VALUES
+(11212, 'John Johnson', 'Male', '2008-01-04', 'British'),
+(19590, 'Prudence Paavo', 'Female', '2008-06-16', 'Portuguese'),
+(20232, 'Gift Uwame', 'Female', '2008-01-02', 'Nigerian'),
+(24584, 'Imran Al-Amin', 'Male', '2007-08-29', 'Arabic'),
+(29672, 'Sarah Nguyen', 'Female', '2007-11-12', 'Vietnamese'),
+(34590, 'Rudolph Schindler', 'Male', '2007-11-12', 'British'),
+(35782, 'Stephen Quirk', 'Male', '2007-02-12', 'British'),
+(40874, 'Aoife OMulligan', 'Female', '2008-07-12', 'Irish'),
+(43174, 'Ulises Arces', 'Male', '2007-01-01', 'Spanish'),
+(47774, 'Gino DaCampo', 'Male', '2008-03-15', 'Italian'),
+(55590, 'Clementina Estevez', 'Female', '2007-06-13', 'Spanish'),
+(55597, 'Meine Schwitzer', 'Male', '2008-07-23', 'German'),
+(68658, 'Denny Danford', 'Male', '2009-11-19', 'British'),
+(74562, 'Raven Davids', 'Non-Binary', '2007-03-23', 'British'),
+(81619, 'Garry Gratz', 'Male', '2007-03-08', 'British'),
+(81754, 'Aaliyah Ahmed', 'Female', '2008-07-29', 'Arabic'),
+(86753, 'Jordana Nieves', 'Female', '2007-03-23', 'Spanish');
+
+
+Table structure for table Student_Co_Curricular
+
+CREATE TABLE Student_Co_Curricular (
+  ID int(11) NOT NULL,
+  Student_ID int(11) NOT NULL,
+  Student_Name varchar(50) NOT NULL,
+  Activity_Name varchar(100) NOT NULL,
+  Teacher_Name varchar(50) NOT NULL,
+  Teacher_ID varchar(10) NOT NULL
+);
+
+INSERT INTO Student_Co_Curricular (ID, Student_ID, Student_Name, Activity_Name, Teacher_Name, Teacher_ID) VALUES
+(1, 81754, 'Aaliyah Ahmed', 'Year Book', 'Sandy Clayden', 'SCLA'),
+(2, 81754, 'Aaliyah Ahmed', 'Model UN', 'Daphne Yorke', 'DYOR'),
+(3, 40874, 'Aoife OMulligan', 'Cheerleading', 'Josie Crouch', 'JCRO'),
+(4, 55590, 'Clementina Estevez', 'Tennis', 'Mark Bercerra', 'MBER'),
+(5, 55590, 'Clementina Estevez', 'Cheerleading', 'Josie Crouch', 'JCRO'),
+(6, 68658, 'Denny Danford', 'E-Sports', 'Shane Canmore', 'SCAN'),
+(7, 81619, 'Garry Gratz', 'E-Sports', 'Shane Canmore', 'SCAN'),
+(8, 81619, 'Garry Gratz', 'Young Enterprise', 'Jonah Ianuzzi', 'JIAN'),
+(9, 20232, 'Gift Uwame', 'Year Book', 'Sandy Clayden', 'SCLA'),
+(10, 20232, 'Gift Uwame', 'Debating', 'Eric Niblock', 'ENIB'),
+(11, 47774, 'Gino Dacampo', 'Theatre Production', 'Julius Frank', 'JFRA'),
+(12, 47774, 'Gino DaCampo', 'Cheerleading', 'Josie Crouch', 'JCRO'),
+(13, 47774, 'Gino DaCampo', 'E-Sports', 'Shane Canmore', 'SCAN'),
+(14, 24584, 'Imran Al-Amin', 'Forensic Science', 'Elizabeth Dingie', 'EDIN'),
+(15, 24584, 'Imran Al-Amin', 'Ukelele for Beginners', 'Madline Pandit', 'MPAN'),
+(16, 11212, 'John Johnson', 'Debating', 'Eric Niblock', 'ENIB'),
+(17, 86753, 'Jordana Nieves', 'Pottery', 'Julian Robinson', 'JROB'),
+(18, 86753, 'Jordana Nieves', 'Knitting', 'Della Windsor', 'DWIN'),
+(19, 55597, 'Meine Schwitzer', 'Tennis', 'Mark Bercerra', 'MBER'),
+(20, 55597, 'Meine Schwitzer', 'Model UN', 'Daphne Yorke', 'DYOR'),
+(21, 19590, 'Prudence Paavo', 'Theatre Production', 'Julius Frank', 'JFRA'),
+(22, 19590, 'Prudence Paavo', 'Cheerleading', 'Josie Crouch', 'JCRO'),
+(23, 19590, 'Prudence Paavo', 'Young Enterprise', 'Jonah Ianuzzi', 'JIAN'),
+(24, 74562, 'Raven Davids', 'Tennis', 'Mark Bercerra', 'MBER'),
+(25, 74562, 'Raven Davids', 'Model UN', 'Daphne Yorke', 'DYOR'),
+(26, 74562, 'Raven Davids', 'Forensic Science', 'Elizabeth Dingie', 'EDIN'),
+(27, 34590, 'Rudolph Schindler', 'Year Book', 'Sandy Clayden', 'SCLA'),
+(28, 34590, 'Rudoolph Schindler', 'Debating', 'Eric Niblock', 'ENIB'),
+(29, 29672, 'Sarah Nguyen', 'Cheerleading', 'Josie Crouch', 'JCRO'),
+(30, 29672, 'Sarah Nguyen', 'Pottery', 'Julian Robinson', 'JROB'),
+(31, 35782, 'Stephen Quirk', 'Tennis', 'Mark Bercerra', 'MBER'),
+(32, 35782, 'Stephen Quirk', 'E-Sports', 'Shane Canmore', 'SCAN'),
+(33, 35782, 'Stephen Quirk', 'Forensic Science', 'Elizabeth Dingie', 'EDIN'),
+(34, 43174, 'Ulises Arces', 'Theatre Production', 'Julius Frank', 'JFRA'),
+(35, 43174, 'Ulises Arces', 'Year Book', 'Sandy Clayden', 'SCLA'),
+(36, 43174, 'Ulises Arces', 'Ukelele for Beginners', 'Madline Pandit', 'MPAN');
+
+
+ 
+
+Table structure for Student_Timetable
+
+CREATE TABLE Student_Timetable (
+  Student_ID int(11) NOT NULL,
+  Class_ID varchar(50) NOT NULL,
+  ID int(11) NOT NULL,
+  Time time NOT NULL
+);
+
+INSERT INTO Student_Timetable (Student_ID, Class_ID, ID, Time) VALUES
+(11212, 'ART08', 1, '08:30:00'),
+(11212, 'BIO08', 2, '09:20:00'),
+(11212, 'LAN08', 4, '10:30:00'),
+(11212, 'ECO08', 5, '11:20:00'),
+(11212, 'MAT08', 6, '13:35:00'),
+(11212, 'MAN08', 7, '14:25:00'),
+(19590, 'SPA08', 8, '08:30:00'),
+(19590, 'PHY08', 9, '09:20:00'),
+(19590, 'COM08', 10, '10:30:00'),
+(19590, 'MUS08', 11, '11:20:00'),
+(19590, 'DAN08', 12, '13:35:00'),
+(19590, 'DTA08', 13, '14:25:00'),
+(20232, 'PE081', 14, '08:30:00'),
+(20232, 'DRA08', 15, '09:20:00'),
+(20232, 'PE082', 16, '10:30:00'),
+(20232, 'CHEM08', 17, '11:20:00'),
+(20232, 'LIT08', 18, '13:35:00'),
+(20232, 'FRE08', 19, '14:25:00'),
+(24584, 'ART08', 20, '08:30:00'),
+(24584, 'BIO08', 21, '09:20:00'),
+(24584, 'LAN08', 22, '10:30:00'),
+(24584, 'ECO08', 23, '11:20:00'),
+(24584, 'MAT08', 24, '13:35:00'),
+(24584, 'MAN08', 25, '14:25:00'),
+(29672, 'SPA08', 26, '08:30:00'),
+(29672, 'PHY08', 27, '09:20:00'),
+(29672, 'COM08', 28, '10:30:00'),
+(29672, 'MUS08', 29, '11:20:00'),
+(29672, 'DAN08', 30, '13:35:00'),
+(29672, 'DTA08', 31, '14:25:00'),
+(34590, 'PE081', 32, '08:30:00'),
+(34590, 'DRA08', 33, '09:20:00'),
+(34590, 'PE082', 34, '10:30:00'),
+(34590, 'CHEM08', 35, '11:20:00'),
+(34590, 'LIT08', 36, '13:35:00'),
+(34590, 'FRE08', 37, '14:25:00'),
+(35782, 'ART08', 38, '08:30:00'),
+(35782, 'BIO08', 39, '09:20:00'),
+(35782, 'LAN08', 40, '10:30:00'),
+(35782, 'ECO08', 41, '11:20:00'),
+(35782, 'MAT08', 42, '13:35:00'),
+(35782, 'MAN08', 43, '14:25:00'),
+(40874, 'SPA08', 44, '08:30:00'),
+(40874, 'PHY08', 45, '09:20:00'),
+(40874, 'COM08', 46, '10:30:00'),
+(40874, 'MUS08', 47, '11:20:00'),
+(40874, 'DAN08', 48, '13:35:00'),
+(40874, 'DTA08', 49, '14:25:00'),
+(43174, 'PE081', 50, '08:30:00'),
+(43174, 'DRA08', 51, '09:20:00'),
+(43174, 'PE082', 52, '10:30:00'),
+(43174, 'CHEM08', 53, '11:20:00'),
+(43174, 'LIT08', 54, '13:35:00'),
+(43174, 'FRE08', 55, '14:25:00'),
+(47774, 'ART08', 56, '08:30:00'),
+(47774, 'BIO08', 57, '09:20:00'),
+(47774, 'LAN08', 58, '10:30:00'),
+(47774, 'ECO08', 59, '11:20:00'),
+(47774, 'MAT08', 60, '13:35:00'),
+(47774, 'MAN08', 61, '14:25:00'),
+(55590, 'SPA08', 62, '08:30:00'),
+(55590, 'PHY08', 63, '09:20:00'),
+(55590, 'COM08', 64, '10:30:00'),
+(55590, 'MUS08', 65, '11:20:00'),
+(55590, 'DAN08', 66, '13:35:00'),
+(55590, 'DTA08', 67, '14:25:00'),
+(55597, 'PE081', 68, '08:30:00'),
+(55597, 'DRA08', 69, '09:20:00'),
+(55597, 'PE082', 70, '10:30:00'),
+(55597, 'CHEM08', 71, '11:20:00'),
+(55597, 'LIT08', 72, '13:35:00'),
+(55597, 'FRE08', 73, '14:25:00'),
+(68658, 'ART08', 74, '08:30:00'),
+(68658, 'BIO08', 75, '09:20:00'),
+(68658, 'LAN08', 76, '10:30:00'),
+(68658, 'ECO08', 77, '11:20:00'),
+(68658, 'MAT08', 78, '13:35:00'),
+(68658, 'MAN08', 79, '14:25:00'),
+(74562, 'SPA08', 80, '08:30:00'),
+(74562, 'PHY08', 81, '09:20:00'),
+(74562, 'COM08', 82, '10:30:00'),
+(74562, 'MUS08', 83, '11:20:00'),
+(74562, 'DAN08', 84, '13:35:00'),
+(74562, 'DTA08', 85, '14:25:00'),
+(81619, 'PE081', 86, '08:30:00'),
+(81619, 'DRA08', 87, '09:20:00'),
+(81619, 'PE082', 88, '10:30:00'),
+(81619, 'CHEM08', 89, '11:20:00'),
+(81619, 'LIT08', 90, '13:35:00'),
+(81619, 'FRE08', 91, '14:25:00'),
+(81754, 'ART08', 92, '08:30:00'),
+(81754, 'BIO08', 93, '09:20:00'),
+(81754, 'LAN08', 94, '10:30:00'),
+(81754, 'ECO08', 95, '11:20:00'),
+(81754, 'MAT08', 96, '13:35:00'),
+(81754, 'MAN08', 97, '14:25:00'),
+(86753, 'SPA08', 98, '08:30:00'),
+(86753, 'PHY08', 99, '09:20:00'),
+(86753, 'COM08', 100, '10:30:00'),
+(86753, 'MUS08', 101, '11:20:00'),
+(86753, 'DAN08', 102, '13:35:00'),
+(86753, 'DTA08', 103, '14:25:00');
+
+
+Table structure for Teacher
+
+CREATE TABLE Teacher (
+  Teacher_ID varchar(10) NOT NULL,
+  Teacher_Name varchar(50) NOT NULL,
+  Subject varchar(50) NOT NULL,
+  Years_Served int(10) NOT NULL,
+  Salary int(10) NOT NULL,
+  Street_Address varchar(50) NOT NULL,
+  Postal_Code varchar(20) NOT NULL,
+  Contact_Number varchar(40) NOT NULL
+);
+
+
+INSERT INTO Teacher (Teacher_ID, Teacher_Name, Subject, Years_Served, Salary, Street_Address, Postal_Code, Contact_Number) VALUES
+('AKIR', 'Amy Kirman', 'Biology', 5, 33010, '14b Grey Street', 'BN16 1HB', '07788 775623'),
+('BDID', 'Benoit Didier', 'French', 9, 40590, '13b North Street', 'BN17 4HG', '07789 645253'),
+('DWIN', 'Della Windsor', 'Design Technology', 5, 33010, '4801 Ridge Road', 'BN13 1GD', '07896 354765'),
+('DYOR', 'Daphne York', 'Economics', 3, 28413, '233 Cliffside Drive', 'BN16 8GH', '07788 746312'),
+('EDIN', 'Elizabeth Dingie', 'Chemistry', 10, 40490, '10 South Street', 'BN13 8KH', '07744 576908'),
+('ENIB', 'Eric Niblock', 'Geography', 1, 24373, '123 Mansion Lane', 'BN17 7GH', '07123 687078'),
+('JCRO', 'Josie Crouch', 'Dance', 6, 35791, '15 Broad Street', 'BN14 4KH', '07841 295912'),
+('JFRA', 'Julius Frank', 'Drama', 4, 30599, '23 South Street', 'BN17 9GH', '07965 546835'),
+('JIAN', 'Jonah Ianuzzi', 'History', 2, 26298, '12 Canmore Street', 'BN12 6JH', '07895 462728'),
+('JLIP', 'Jade Lipson', 'Physics', 2, 26298, '121a North Street', 'BN19 7BN', '07564 896745'),
+('JROB', 'Julian Robinson', 'Art', 7, 39050, '52 Bridge Street', 'BN16 1KF', '07796 576354'),
+('LLEE', 'Lin Lee', 'Mandarin', 1, 27600, '18 The Street', 'BN17 5JH', '07789 778942'),
+('MBER', 'Mark Bercerra', 'Physical Education 1', 3, 28413, '113 Windsor Street', 'BN17 1BF', '07985 146272'),
+('MPAN', 'Madeline Pandit', 'Music', 25, 40490, '111 Parkside Road', 'BN13 2GH', '07892 263546'),
+('MRUI', 'Macarena Ruiz', 'Spanish', 2, 26298, '13b North Street', 'BN17 4HG', '07799 776542'),
+('PPET', 'Paul Peterson', 'Physical Education 2', 7, 39050, '116 Windsor Street', 'BN17 1BF', '07523 562874'),
+('SCAN', 'Shane Canmore', 'Computer Science', 5, 33010, '154 The Street', 'BN15 1JD', '07789 645132'),
+('SCLA', 'Sandy Clayden', 'English Literature', 21, 40490, '18 Privet Lane', 'BN17 9GH', '07766 123465'),
+('SGAT', 'Stephen Gately', 'Maths', 12, 37654, '956 Ireland Court', 'BN18 9IR', '07789 645386'),
+('SHAR', 'Steve Harvey', 'English Language', 6, 35971, '25b North Street', 'BN19 8GH', '07856 968532');
+
+
+Table structure for Timetable
+
+CREATE TABLE Timetable (
+  Class_ID varchar(50) NOT NULL,
+  Teacher_ID varchar(10) NOT NULL,
+  Subject varchar(50) NOT NULL,
+  Room_Number varchar(100) NOT NULL,
+  Day varchar(20) NOT NULL,
+  Time time NOT NULL
+);
+
+INSERT INTO Timetable (Class_ID, Teacher_ID, Subject, Room_Number, Day, Time) VALUES
+('BIO08', 'AKIR', 'Biology', '221', 'Monday', '09:20:00'),
+('FRE08', 'BDID', 'French', '107', 'Monday', '14:25:00'),
+('DTA08', 'DWIN', 'Design Technology', '323', 'Monday', '14:25:00'),
+('ECO08', 'DYOR', 'Economics', '315', 'Monday', '11:20:00'),
+('CHEM08', 'EDIN', 'Chemistry', '220', 'Monday', '11:20:00'),
+('DAN08', 'JCRO', 'Dance', '100', 'Monday', '13:35:00'),
+('DRA08', 'JFRA', 'Drama', '100', 'Monday', '09:20:00'),
+('PHY08', 'JLIP', 'Physics', '222', 'Monday', '09:20:00'),
+('ART08', 'JROB', 'Art', '323', 'Monday', '08:30:00'),
+('MAN08', 'LLEE', 'Mandarin', '112', 'Monday', '14:25:00'),
+('PE081', 'MBER', 'Physical Education 1', '001', 'Monday', '08:30:00'),
+('MUS08', 'MPAN', 'Music', '113', 'Monday', '11:20:00'),
+('SPA08', 'MRUI', 'Spanish', '101', 'Monday', '08:30:00'),
+('PE082', 'PPET', 'Physical Education 2', '002', 'Monday', '10:30:00'),
+('COM08', 'SCAN', 'Computer Science', '205', 'Monday', '10:30:00'),
+('LIT08', 'SCLA', 'English Literature', '211', 'Monday', '13:35:00'),
+('MAT08', 'SGAT', 'Maths', '174', 'Monday', '13:35:00'),
+('LAN08', 'SHAR', 'English Language', '210', 'Monday', '10:30:00');
+
+
+Structure for view behaviour_report
+
+DROP TABLE IF EXISTS behaviour_report;
+
+CREATE OR REPLACE VIEW behaviour_report
+AS  SELECT s.Student_ID AS student_ID,s.Student_Name 
+AS student_name, bm.Plus_Points AS plus_points, bm.Minus_Points AS minus_points
+FROM (schooldb.student s join schooldb.behaviour_management bm) 
+WHERE s.Student_ID = bm.Student_ID 
+ORDER BY bm.Plus_Points DESC ;
+
+
+Indexes
+
+Indexes for table Behaviour_Management
+ALTER TABLE Behaviour_Management
+  ADD PRIMARY KEY (Student_ID),
+  ADD KEY Student_ID (Student_ID);
+
+Indexes for table Co_Curricular
+ALTER TABLE Co_Curricular
+  ADD PRIMARY KEY (Teacher_ID),
+  ADD UNIQUE KEY Activity_Name (Activity_Name),
+  ADD KEY Activity_Name_2 (Activity_Name),
+  ADD KEY Teacher_ID (Teacher_ID);
+
+Indexes for table Department
+ALTER TABLE Department
+  ADD PRIMARY KEY (ID);
+
+Indexes for table Location
+ALTER TABLE Location
+  ADD PRIMARY KEY (Room_Number);
+
+Indexes for table Student
+ALTER TABLE Student
+  ADD PRIMARY KEY (Student_ID),
+  ADD UNIQUE KEY Student_ID (Student_ID),
+  ADD UNIQUE KEY Student_Name (Student_Name),
+  ADD KEY Student_Name_2 (Student_Name);
+
+Indexes for table Student_Co_Curricular
+ALTER TABLE Student_Co_Curricular
+  ADD PRIMARY KEY (ID),
+  ADD KEY Teacher_ID (Teacher_ID);
+
+Indexes for table Student_Timetable
+ALTER TABLE Student_Timetable
+  ADD PRIMARY KEY (ID),
+  ADD UNIQUE KEY Student_ID (Student_ID,ID) USING BTREE,
+  ADD KEY Student_ID_2 (Student_ID),
+  ADD KEY ID (ID),
+  ADD KEY Class_ID (Class_ID);
+
+Indexes for table Teacher
+ALTER TABLE Teacher
+  ADD PRIMARY KEY (Teacher_ID),
+  ADD UNIQUE KEY Teacher_ID (Teacher_ID),
+  ADD UNIQUE KEY Teacher_Name (Teacher_Name);
+
+Indexes for table Timetable
+ALTER TABLE Timetable
+  ADD PRIMARY KEY (Teacher_ID),
+  ADD UNIQUE KEY Class_ID (Class_ID,Teacher_ID),
+  ADD UNIQUE KEY Class_ID_2 (Class_ID),
+  ADD UNIQUE KEY Teacher_ID (Teacher_ID);
+
+
+Miscellaneous
+
+AUTO_INCREMENT for table Department
+ALTER TABLE Department
+  MODIFY ID int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+
+AUTO_INCREMENT for table Student_Co_Curricular
+ALTER TABLE Student_Co_Curricular
+  MODIFY ID int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+
+AUTO_INCREMENT for table Student_Timetable
+ALTER TABLE Student_Timetable
+  MODIFY ID int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
+
+Constraints for table Behaviour_Management
+ALTER TABLE Behaviour_Management
+  ADD CONSTRAINT behaviour_management_ibfk_1 FOREIGN KEY (Student_ID) REFERENCES Student (Student_ID),
+  ADD CONSTRAINT behaviour_management_ibfk_2 FOREIGN KEY (Student_ID) REFERENCES student (Student_ID);
+
+Constraints for table Student_Co_Curricular
+ALTER TABLE Student_Co_Curricular
+  ADD CONSTRAINT student_co_curricular_ibfk_1 FOREIGN KEY (Teacher_ID) REFERENCES Co_Curricular (Teacher_ID);
+
+Constraints for table Student_Timetable
+ALTER TABLE Student_Timetable
+  ADD CONSTRAINT student_timetable_ibfk_1 FOREIGN KEY (Class_ID) REFERENCES Timetable (Class_ID),
+  ADD CONSTRAINT student_timetable_ibfk_2 FOREIGN KEY (Class_ID) REFERENCES Timetable (Class_ID);
+
+Constraints for table Timetable
+ALTER TABLE Timetable
+  ADD CONSTRAINT timetable_ibfk_1 FOREIGN KEY (Teacher_ID) REFERENCES Timetable (Teacher_ID);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
