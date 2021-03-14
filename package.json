@@ -1,0 +1,27 @@
+{
+  "name": "teamrubberduck",
+  "version": "0.0.1",
+  "description": "Student database application written in JavaScript.",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/janinehealy/teamrubberduck.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "Node.js",
+    "Express.js",
+    "SQLite",
+    "Angular.js"
+  ],
+  "author": "Janine Healy",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/janinehealy/teamrubberduck/issues"
+  },
+  "homepage": "https://github.com/janinehealy/teamrubberduck#readme"
+}
