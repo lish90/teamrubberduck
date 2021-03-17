@@ -7,7 +7,7 @@ var con = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "",
-    database: "students"
+    database: "schoolDB"
 });
 
 // Function is callback when connection completed.
