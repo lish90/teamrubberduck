@@ -6,16 +6,50 @@
 <body>
     <h1>Teacher</h1>
     <div ng-app="mainApp" ng-controller="teacherController">
-        <p><input type="text" ng-model="teacherSearchBox"> <input type="button" value="Search" ng-click="teacherSearchButton"></p>
-        <p>ID: <input type="text" ng-model="teacherId"></p>
-        <p>Full Name: <input type="text" ng-model="teacherName"></p>
-        <p>Teacher Subject: <input type="text" ng-model="teacherSubject"></p>
-        <p>Years Served: <input type="text" ng-model="teacherYears"></p>
-        <p>Salary: <input type="text" ng-model="teacherSalary"></p>
-        <p>Street Address: <input type="text" ng-model="teacherAddress"></p>
-        <p>Postal Code: <input type="text" ng-model="teacherPostal"></p>
-        <p>Contact Number: <input type="text" ng-model="teacherNumber"></p>
-        <p><input type="button" value="Update Record" ng-click="teacherUpdate"> <input type="button" value="Delete Record" ng-click="teacherDelete"></p>
+        <table>
+            <tr>
+                <td>Search Teacher:</td>
+                <td>
+                    <input type="text" ng-model="teacherSearchBox">
+                    <input type="button" value="Search" ng-click="teacherSearchButton">
+                </td>
+            <tr>
+                <td>ID:</td>
+                <td><input type="text" ng-model="teacherId"></td>
+            </tr>
+            <tr>
+                <td>Full Name:</td>
+                <td><input type="text" ng-model="teacherName"></td>
+            </tr>
+            <tr>
+                <td>Teacher Subject:</td>
+                <td><input type="text" ng-model="teacherSubject"></td>
+            </tr>
+            <tr>
+                <td>Years Served:</td>
+                <td><input type="text" ng-model="teacherYears"></td>
+            </tr>
+            <tr>
+                <td>Salary:</td>
+                <td><input type="text" ng-model="teacherSalary"></td>
+            </tr>
+            <tr>
+                <td>Street Address:</td>
+                <td><input type="text" ng-model="teacherAddress"></td>
+            </tr>
+            <tr>
+                <td>Postal Code:</td>
+                <td><input type="text" ng-model="teacherPostal"></td>
+            </tr>
+            <tr>
+                <td>Contact Number:</td>
+                <td><input type="text" ng-model="teacherNumber"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="Update Record" ng-click="teacherUpdate"></td>
+                <td><input type="button" value="Delete Record" ng-click="teacherDelete"></td>
+            </tr>
+        </table>
     </div>
 </body>
 </html>

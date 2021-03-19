@@ -6,14 +6,42 @@
 <body>
     <h1>Timetable</h1>
     <div ng-app="mainApp" ng-controller="timetableController">
-        <p><input type="text" ng-model="timetableSearchBox"> <input type="button" value="Search" ng-click="timetableSearchButton"></p>
-        <p>Class ID: <input type="text" ng-model="timetableClass"></p>
-        <p>Teacher ID: <input type="text" ng-model="timetableTeacher"></p>
-        <p>Subject: <input type="text" ng-model="timetableSubject"></p>
-        <p>Room Number: <input type="text" ng-model="timetableRoom"></p>
-        <p>Day: <input type="text" ng-model="timetableDay"></p>
-        <p>Time: <input type="text" ng-model="timetableTime"></p>
-        <p><input type="button" value="Update Record" ng-click="timetableUpdate"> <input type="button" value="Delete Record" ng-click="timetableDelete"></p>
+        <table>
+            <tr>
+                <td>Search Timetable:</td>
+                <td>
+                    <input type="text" ng-model="timetableSearchBox">
+                    <input type="button" value="Search" ng-click="timetableSearchButton">
+                </td>
+            <tr>
+                <td>Class ID:</td>
+                <td><input type="text" ng-model="timetableClass"></td>
+            </tr>
+            <tr>
+                <td>Teacher ID:</td>
+                <td><input type="text" ng-model="timetableTeacher"></td>
+            </tr>
+            <tr>
+                <td>Subject:</td>
+                <td><input type="text" ng-model="timetableSubject"></td>
+            </tr>
+            <tr>
+                <td>Room Number:</td>
+                <td><input type="text" ng-model="timetableRoom"></td>
+            </tr>
+            <tr>
+                <td>Day:</td>
+                <td><input type="text" ng-model="timetableDay"></td>
+            </tr>
+            <tr>
+                <td>Time:</td>
+                <td><input type="text" ng-model="timetableTime"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="Update Record" ng-click="timetableUpdate"></td>
+                <td><input type="button" value="Delete Record" ng-click="timetableDelete"></td>
+            </tr>
+        </table>
     </div>
 </body>
 </html>
