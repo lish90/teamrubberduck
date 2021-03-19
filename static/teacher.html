@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Teacher Page</title>
+</head>
+<body>
+    <h1>Teacher</h1>
+    <div ng-app="mainApp" ng-controller="teacherController">
+        <p><input type="text" ng-model="teacherSearchBox"> <input type="button" value="Search" ng-click="teacherSearchButton"></p>
+        <p>ID: <input type="text" ng-model="teacherId"></p>
+        <p>Full Name: <input type="text" ng-model="teacherName"></p>
+        <p>Teacher Subject: <input type="text" ng-model="teacherSubject"></p>
+        <p>Years Served: <input type="text" ng-model="teacherYears"></p>
+        <p>Salary: <input type="text" ng-model="teacherSalary"></p>
+        <p>Street Address: <input type="text" ng-model="teacherAddress"></p>
+        <p>Postal Code: <input type="text" ng-model="teacherPostal"></p>
+        <p>Contact Number: <input type="text" ng-model="teacherNumber"></p>
+        <p><input type="button" value="Update Record" ng-click="teacherUpdate"> <input type="button" value="Delete Record" ng-click="teacherDelete"></p>
+    </div>
+</body>
+</html>

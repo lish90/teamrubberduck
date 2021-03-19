@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Timetable Page</title>
+</head>
+<body>
+    <h1>Timetable</h1>
+    <div ng-app="mainApp" ng-controller="timetableController">
+        <p><input type="text" ng-model="timetableSearchBox"> <input type="button" value="Search" ng-click="timetableSearchButton"></p>
+        <p>Class ID: <input type="text" ng-model="timetableClass"></p>
+        <p>Teacher ID: <input type="text" ng-model="timetableTeacher"></p>
+        <p>Subject: <input type="text" ng-model="timetableSubject"></p>
+        <p>Room Number: <input type="text" ng-model="timetableRoom"></p>
+        <p>Day: <input type="text" ng-model="timetableDay"></p>
+        <p>Time: <input type="text" ng-model="timetableTime"></p>
+        <p><input type="button" value="Update Record" ng-click="timetableUpdate"> <input type="button" value="Delete Record" ng-click="timetableDelete"></p>
+    </div>
+</body>
+</html>

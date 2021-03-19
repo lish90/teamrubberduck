@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Student Page</title>
+</head>
+<body>
+    <h1>Student</h1>
+    <div ng-app="mainApp" ng-controller="studentController">
+        <p><input type="text" ng-model="studentSearchBox"> <input type="button" value="Search" ng-click="studentSearchButton"></p>
+        <p>ID: <input type="text" ng-model="studentId"></p>
+        <p>Full Name: <input type="text" ng-model="studentName"></p>
+        <p>Date of Birth: <input type="text" ng-model="studentDob"></p>
+        <p>Gender: <input type="text" ng-model="studentGender"></p>
+        <p><input type="button" value="Update Record" ng-click="studentUpdate"> <input type="button" value="Delete Record" ng-click="studentDelete"></p>
+    </div>
+</body>
+</html>
