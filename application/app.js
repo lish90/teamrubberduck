@@ -10,6 +10,8 @@ const app = express();
 // Use static folder to server static files
 app.use(express.static("static"));
 
+
+
 // Start listening the server on port localhost:3000
 app.listen(3000, function(err){
     if(err) {
