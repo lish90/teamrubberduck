@@ -3,6 +3,7 @@
 <head>
     <title>Timetable Page</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.js"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>Timetable</h1>
@@ -12,7 +13,7 @@
                 <td>Search Timetable:</td>
                 <td>
                     <input type="text" ng-model="timetableSearchBox">
-                    <input type="button" value="Search" ng-click="timetableSearchButton">
+                    <input type="button" value="Search" class="myButtonSearch" ng-click="timetableSearchButton">
                 </td>
             <tr>
                 <td>Class ID:</td>
@@ -39,8 +40,8 @@
                 <td><input type="text" ng-model="timetableTime"></td>
             </tr>
             <tr>
-                <td><input type="button" value="Update Record" ng-click="timetableUpdate"></td>
-                <td><input type="button" value="Delete Record" ng-click="timetableDelete"></td>
+                <td><input type="button" value="Update Record" class="myButton" ng-click="timetableUpdate"></td>
+                <td><input type="button" value="Delete Record" class="myButtonDelete" ng-click="timetableDelete"></td>
             </tr>
         </table>
     </div>
