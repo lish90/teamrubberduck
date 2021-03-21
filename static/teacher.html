@@ -3,6 +3,7 @@
 <head>
     <title>Teacher Page</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.js"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>Teacher</h1>
@@ -12,7 +13,7 @@
                 <td>Search Teacher:</td>
                 <td>
                     <input type="text" ng-model="teacherSearchBox">
-                    <input type="button" value="Search" ng-click="teacherSearchButton">
+                    <input type="button" value="Search" class="myButtonSearch" ng-click="teacherSearchButton">
                 </td>
             <tr>
                 <td>ID:</td>
@@ -47,8 +48,8 @@
                 <td><input type="text" ng-model="teacherNumber"></td>
             </tr>
             <tr>
-                <td><input type="button" value="Update Record" ng-click="teacherUpdate"></td>
-                <td><input type="button" value="Delete Record" ng-click="teacherDelete"></td>
+                <td><input type="button" value="Update Record" class="myButton" ng-click="teacherUpdate"></td>
+                <td><input type="button" value="Delete Record" class="myButtonDelete" ng-click="teacherDelete"></td>
             </tr>
         </table>
     </div>
