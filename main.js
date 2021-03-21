@@ -1,4 +1,4 @@
 "use strict";
 
-const app = require("./application/app.js");
+const app = require("./application/app");
 const data = require("./data/data.js");
