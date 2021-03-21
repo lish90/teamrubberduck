@@ -6,44 +6,53 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Timetable</h1>
-    <div ng-app="mainApp" ng-controller="timetableController">
-        <table>
-            <tr>
-                <td>Search Timetable:</td>
-                <td>
-                    <input type="text" ng-model="timetableSearchBox">
-                    <input type="button" value="Search" class="myButtonSearch" ng-click="timetableSearchButton">
-                </td>
-            <tr>
-                <td>Class ID:</td>
-                <td><input type="text" ng-model="timetableClass"></td>
-            </tr>
-            <tr>
-                <td>Teacher ID:</td>
-                <td><input type="text" ng-model="timetableTeacher"></td>
-            </tr>
-            <tr>
-                <td>Subject:</td>
-                <td><input type="text" ng-model="timetableSubject"></td>
-            </tr>
-            <tr>
-                <td>Room Number:</td>
-                <td><input type="text" ng-model="timetableRoom"></td>
-            </tr>
-            <tr>
-                <td>Day:</td>
-                <td><input type="text" ng-model="timetableDay"></td>
-            </tr>
-            <tr>
-                <td>Time:</td>
-                <td><input type="text" ng-model="timetableTime"></td>
-            </tr>
-            <tr>
-                <td><input type="button" value="Update Record" class="myButton" ng-click="timetableUpdate"></td>
-                <td><input type="button" value="Delete Record" class="myButtonDelete" ng-click="timetableDelete"></td>
-            </tr>
-        </table>
+    <div class="topnav">
+        <a href="student_information.html">Student</a>
+        <a href="teacher.html">Teacher</a>
+        <a class="active" href="timetable.html">Timetable</a>
+    </div>
+    <div class="container">
+        <div ng-app="mainApp" ng-controller="timetableController">
+            <table>
+                <tr>
+                    <td colspan="2" style="text-align: center"><h1>Timetable</h1></td>
+                </tr>
+                <tr>
+                    <td>Search Timetable:</td>
+                    <td>
+                        <input type="text" ng-model="timetableSearchBox">
+                        <input type="button" value="Search" class="myButtonSearch" ng-click="timetableSearchButton">
+                    </td>
+                <tr>
+                    <td>Class ID:</td>
+                    <td><input type="text" ng-model="timetableClass"></td>
+                </tr>
+                <tr>
+                    <td>Teacher ID:</td>
+                    <td><input type="text" ng-model="timetableTeacher"></td>
+                </tr>
+                <tr>
+                    <td>Subject:</td>
+                    <td><input type="text" ng-model="timetableSubject"></td>
+                </tr>
+                <tr>
+                    <td>Room Number:</td>
+                    <td><input type="text" ng-model="timetableRoom"></td>
+                </tr>
+                <tr>
+                    <td>Day:</td>
+                    <td><input type="text" ng-model="timetableDay"></td>
+                </tr>
+                <tr>
+                    <td>Time:</td>
+                    <td><input type="text" ng-model="timetableTime"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="Update Record" class="myButton" ng-click="timetableUpdate"></td>
+                    <td><input type="button" value="Delete Record" class="myButtonDelete" ng-click="timetableDelete"></td>
+                </tr>
+            </table>
+        </div>
     </div>
 </body>
 </html>

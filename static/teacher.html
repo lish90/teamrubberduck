@@ -6,52 +6,61 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Teacher</h1>
-    <div ng-app="mainApp" ng-controller="teacherController">
-        <table>
-            <tr>
-                <td>Search Teacher:</td>
-                <td>
-                    <input type="text" ng-model="teacherSearchBox">
-                    <input type="button" value="Search" class="myButtonSearch" ng-click="teacherSearchButton">
-                </td>
-            <tr>
-                <td>ID:</td>
-                <td><input type="text" ng-model="teacherId"></td>
-            </tr>
-            <tr>
-                <td>Full Name:</td>
-                <td><input type="text" ng-model="teacherName"></td>
-            </tr>
-            <tr>
-                <td>Teacher Subject:</td>
-                <td><input type="text" ng-model="teacherSubject"></td>
-            </tr>
-            <tr>
-                <td>Years Served:</td>
-                <td><input type="text" ng-model="teacherYears"></td>
-            </tr>
-            <tr>
-                <td>Salary:</td>
-                <td><input type="text" ng-model="teacherSalary"></td>
-            </tr>
-            <tr>
-                <td>Street Address:</td>
-                <td><input type="text" ng-model="teacherAddress"></td>
-            </tr>
-            <tr>
-                <td>Postal Code:</td>
-                <td><input type="text" ng-model="teacherPostal"></td>
-            </tr>
-            <tr>
-                <td>Contact Number:</td>
-                <td><input type="text" ng-model="teacherNumber"></td>
-            </tr>
-            <tr>
-                <td><input type="button" value="Update Record" class="myButton" ng-click="teacherUpdate"></td>
-                <td><input type="button" value="Delete Record" class="myButtonDelete" ng-click="teacherDelete"></td>
-            </tr>
-        </table>
+    <div class="topnav">
+        <a href="student_information.html">Student</a>
+        <a class="active "href="teacher.html">Teacher</a>
+        <a href="timetable.html">Timetable</a>
+    </div>
+    <div class="container">
+        <div ng-app="mainApp" ng-controller="teacherController">
+            <table>
+                <tr>
+                    <td colspan="2" style="text-align: center"><h1>Teacher</h1></td>
+                </tr>
+                <tr>
+                    <td>Search Teacher:</td>
+                    <td>
+                        <input type="text" ng-model="teacherSearchBox">
+                        <input type="button" value="Search" class="myButtonSearch" ng-click="teacherSearchButton">
+                    </td>
+                <tr>
+                    <td>ID:</td>
+                    <td><input type="text" ng-model="teacherId"></td>
+                </tr>
+                <tr>
+                    <td>Full Name:</td>
+                    <td><input type="text" ng-model="teacherName"></td>
+                </tr>
+                <tr>
+                    <td>Teacher Subject:</td>
+                    <td><input type="text" ng-model="teacherSubject"></td>
+                </tr>
+                <tr>
+                    <td>Years Served:</td>
+                    <td><input type="text" ng-model="teacherYears"></td>
+                </tr>
+                <tr>
+                    <td>Salary:</td>
+                    <td><input type="text" ng-model="teacherSalary"></td>
+                </tr>
+                <tr>
+                    <td>Street Address:</td>
+                    <td><input type="text" ng-model="teacherAddress"></td>
+                </tr>
+                <tr>
+                    <td>Postal Code:</td>
+                    <td><input type="text" ng-model="teacherPostal"></td>
+                </tr>
+                <tr>
+                    <td>Contact Number:</td>
+                    <td><input type="text" ng-model="teacherNumber"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="Update Record" class="myButton" ng-click="teacherUpdate"></td>
+                    <td><input type="button" value="Delete Record" class="myButtonDelete" ng-click="teacherDelete"></td>
+                </tr>
+            </table>
+        </div>
     </div>
 </body>
 </html>
