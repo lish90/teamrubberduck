@@ -6,37 +6,46 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Student</h1>
-    <div ng-app="mainApp" ng-controller="studentController">
-        <table>
-            <tr>
-                <td>Search Student:</td>
-                <td>
-                    <input type="text" ng-model="studentSearchBox">
-                    <input type="button" value="Search" class="myButtonSearch" ng-click="studentSearchButton">
-                </td>
-            </tr>
-            <tr>
-                <td>ID:</td>
-                <td><input type="text" ng-model="studentId"></td>
-            </tr>
-            <tr>
-                <td>Full Name:</td>
-                <td><input type="text" ng-model="studentName"></td>
-            </tr>
-            <tr>
-                <td>Date of Birth:</td>
-                <td><input type="text" ng-model="studentDob"></td>
-            </tr>
-            <tr>
-                <td>Gender:</td>
-                <td><input type="text" ng-model="studentGender"></td>
-            </tr>
-            <tr>
-                <td><input type="button" value="Update Record" class="myButton" ng-click="studentUpdate"></td>
-                <td><input type="button" value="Delete Record" class="myButtonDelete" ng-click="studentDelete"></td>
-            </tr>
-        </table>
+    <div class="topnav">
+        <a class="active" href="student_information.html">Student</a>
+        <a href="teacher.html">Teacher</a>
+        <a href="timetable.html">Timetable</a>
+    </div>
+    <div class="container">
+        <div ng-app="mainApp" ng-controller="studentController">
+            <table>
+                <tr>
+                    <td colspan="2" style="text-align: center"><h1>Student</h1></td>
+                </tr>
+                <tr>
+                    <td>Search Student:</td>
+                    <td>
+                        <input type="text" ng-model="studentSearchBox">
+                        <input type="button" value="Search" class="blueButton" ng-click="studentSearchButton">
+                    </td>
+                </tr>
+                <tr>
+                    <td>ID:</td>
+                    <td><input type="text" ng-model="studentId"></td>
+                </tr>
+                <tr>
+                    <td>Full Name:</td>
+                    <td><input type="text" ng-model="studentName"></td>
+                </tr>
+                <tr>
+                    <td>Date of Birth:</td>
+                    <td><input type="text" ng-model="studentDob"></td>
+                </tr>
+                <tr>
+                    <td>Gender:</td>
+                    <td><input type="text" ng-model="studentGender"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="Update Record" class="greenButton" ng-click="studentUpdate"></td>
+                    <td><input type="button" value="Delete Record" class="redButton" ng-click="studentDelete"></td>
+                </tr>
+            </table>
+        </div>
     </div>
 </body>
 </html>

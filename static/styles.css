@@ -2,7 +2,25 @@ body {
     font-family: Arial;
 }
 
-.myButton {
+.container {
+	display: flex;
+	justify-content: center;
+}
+
+h1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 40px;
+	letter-spacing: 2px;
+	word-spacing: 2px;
+	color: #5F5F5F;
+	font-weight: 400;
+	text-decoration: none solid rgb(68, 68, 68);
+	font-style: normal;
+	font-variant: small-caps;
+	text-transform: none;
+}
+
+.greenButton {
 	background-color:#44c767;
 	border-radius:5px;
 	border:1px solid #18ab29;
@@ -15,15 +33,15 @@ body {
 	text-decoration:none;
 	text-shadow:0px 1px 0px #2f6627;
 }
-.myButton:hover {
+.greenButton:hover {
 	background-color:#5cbf2a;
 }
-.myButton:active {
+.greenButton:active {
 	position:relative;
 	top:1px;
 }
 
-.myButtonDelete {
+.redButton {
 	background-color:#c74545;
 	border-radius:5px;
 	border:1px solid #ab1919;
@@ -36,15 +54,15 @@ body {
 	text-decoration:none;
 	text-shadow:0px 1px 0px #662929;
 }
-.myButtonDelete:hover {
+.redButton:hover {
 	background-color:#bd2a2a;
 }
-.myButtonDelete:active {
+.redButton:active {
 	position:relative;
 	top:1px;
 }
 
-.myButtonSearch {
+.blueButton {
 	background-color:#4588c7;
 	border-radius:5px;
 	border:1px solid #1960ab;
@@ -57,10 +75,39 @@ body {
 	text-decoration:none;
 	text-shadow:0px 1px 0px #2b4766;
 }
-.myButtonSearch:hover {
+.blueButton:hover {
 	background-color:#2d7fbd;
 }
-.myButtonSearch:active {
+.blueButton:active {
 	position:relative;
 	top:1px;
 }
+
+.topnav {
+	overflow: hidden;
+	background-color: #f5f5f5;
+  }
+  
+  .topnav a {
+	float: left;
+	color: #858585;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+  }
+  
+  .topnav a:hover {
+	background-color: #e6e6e6;
+	color: black;
+  }
+  
+  .topnav a.active {
+	background-color: #4588c7;
+	color: white;
+  }
+
+  table, th, td {
+	padding: 5px;
+	border-spacing: 10px;
+  }
