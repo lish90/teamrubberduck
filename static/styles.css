@@ -83,11 +83,32 @@ h1 {
 	top:1px;
 }
 
+.orangeButton {
+	background-color:#eb890a;
+	border-radius:5px;
+	border:1px solid #eb8006;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:13px;
+	padding:12px 27px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #030200;
+}
+.orangeButton:hover {
+	background-color:#e98f07;
+}
+.orangeButton:active {
+	position:relative;
+	top:1px;
+}
+
 .topnav {
 	overflow: hidden;
 	background-color: #f5f5f5;
   }
-  
+
   .topnav a {
 	float: left;
 	color: #858585;
