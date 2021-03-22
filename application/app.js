@@ -17,21 +17,27 @@ const app = express();
 app.use(express.static("static"));
 
 // Add Student Endpoint
-app.get("/student/:id", function(req, res){
-    // Get Student by ID
-    res.send("Student " + req.params.id);
+app.get("/student/:full_name", function(req, res){
+    // Get Student by Name
+    data.getStudent(req.params.full_name, function(studentName){
+        res.json(studentName);
+    });
 });
 
 // Add Timetable Endpoint
-app.get("/timetable/:class_id", function(req, res){
-    // Get Timetable by Class ID
-    res.send("Timetable " + req.params.class_id);
+app.get("/timetable/:subject", function(req, res){
+    // Get Timetable by Subject
+    data.getTimetable(req.params.subject, function(subject){
+        res.json(subject);
+    });
 });
 
 // Add Teacher Endpoint
-app.get("/teacher/:id", function(req, res){
-    // Get Teacher by ID
-    res.send("Teacher " + req.params.id);
+app.get("/teacher/:teacher_name", function(req, res){
+    // Get Teacher by Name
+    data.getTeacher(req.params.teacher_name, function(teacherName){
+        res.json(teacherName);
+    });
 });
 
 // Start listening the server on port localhost:3000
