@@ -19,7 +19,9 @@ app.use(express.static("static"));
 // Add Student Endpoint
 app.get("/student/:id", function(req, res){
     // Get Student by ID
-    res.send("Student " + req.params.id);
+    data.getStudent(req.params.id, function(module){
+        res.json(module);
+    });
 });
 
 // Add Timetable Endpoint
