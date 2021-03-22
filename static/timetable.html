@@ -3,6 +3,7 @@
 <head>
     <title>Timetable Page</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.js"></script>
+    <script src="timetable.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -21,31 +22,31 @@
                     <td>Search Timetable:</td>
                     <td>
                         <input type="text" ng-model="timetableSearchBox">
-                        <input type="button" value="Search" class="blueButton" ng-click="timetableSearchButton">
+                        <input type="button" value="Search" class="blueButton" ng-click="timetableSearchButton()">
                     </td>
                 <tr>
                     <td>Class ID:</td>
-                    <td><input type="text" ng-model="timetableClass"></td>
+                    <td><input type="text" ng-model="selectedTimetable.class_id"></td>
                 </tr>
                 <tr>
                     <td>Teacher ID:</td>
-                    <td><input type="text" ng-model="timetableTeacher"></td>
+                    <td><input type="text" ng-model="selectedTimetable.teacher_id"></td>
                 </tr>
                 <tr>
                     <td>Subject:</td>
-                    <td><input type="text" ng-model="timetableSubject"></td>
+                    <td><input type="text" ng-model="selectedTimetable.subject"></td>
                 </tr>
                 <tr>
                     <td>Room Number:</td>
-                    <td><input type="text" ng-model="timetableRoom"></td>
+                    <td><input type="text" ng-model="selectedTimetable.room_number"></td>
                 </tr>
                 <tr>
                     <td>Day:</td>
-                    <td><input type="text" ng-model="timetableDay"></td>
+                    <td><input type="text" ng-model="selectedTimetable.day"></td>
                 </tr>
                 <tr>
                     <td>Time:</td>
-                    <td><input type="text" ng-model="timetableTime"></td>
+                    <td><input type="text" ng-model="selectedTimetable.time"></td>
                 </tr>
                 <tr>
                     <td><input type="button" value="Update Record" class="greenButton" ng-click="timetableUpdate"></td>
