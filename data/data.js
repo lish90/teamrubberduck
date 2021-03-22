@@ -17,8 +17,8 @@ var db = new sqlite3.Database("data/school2.db", function(err){
     console.log("Connected to Database");
 });
 
-exports.getStudent = function(id, callback){
-    var sql = `SELECT * FROM Student WHERE Student_ID=${id}`;
+exports.getStudent = function(full_name, callback){
+    var sql = `SELECT * FROM Student WHERE Student_Name="${full_name}"`;
     db.get(sql, function(err, row){
         if (err){
             console.log(err.message);

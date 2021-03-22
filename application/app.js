@@ -17,9 +17,9 @@ const app = express();
 app.use(express.static("static"));
 
 // Add Student Endpoint
-app.get("/student/:id", function(req, res){
+app.get("/student/:full_name", function(req, res){
     // Get Student by ID
-    data.getStudent(req.params.id, function(module){
+    data.getStudent(req.params.full_name, function(module){
         res.json(module);
     });
 });

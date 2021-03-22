@@ -3,6 +3,7 @@
 <head>
     <title>Student Page</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.js"></script>
+    <script src="student_information.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -21,24 +22,24 @@
                     <td>Search Student:</td>
                     <td>
                         <input type="text" ng-model="studentSearchBox">
-                        <input type="button" value="Search" class="blueButton" ng-click="studentSearchButton">
+                        <input type="button" value="Search" class="blueButton" ng-click="studentSearchButton()">
                     </td>
                 </tr>
                 <tr>
                     <td>ID:</td>
-                    <td><input type="text" ng-model="studentId"></td>
+                    <td><input type="text" ng-model="selectedStudent.id"></td>
                 </tr>
                 <tr>
                     <td>Full Name:</td>
-                    <td><input type="text" ng-model="studentName"></td>
+                    <td><input type="text" ng-model="selectedStudent.full_name"></td>
                 </tr>
                 <tr>
                     <td>Date of Birth:</td>
-                    <td><input type="text" ng-model="studentDob"></td>
+                    <td><input type="text" ng-model="selectedStudent.dob"></td>
                 </tr>
                 <tr>
                     <td>Gender:</td>
-                    <td><input type="text" ng-model="studentGender"></td>
+                    <td><input type="text" ng-model="selectedStudent.gender"></td>
                 </tr>
                 <tr>
                     <td><input type="button" value="Update Record" class="greenButton" ng-click="studentUpdate"></td>
