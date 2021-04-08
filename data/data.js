@@ -17,6 +17,28 @@ var db = new sqlite3.Database("data/school2.db", function(err){
     console.log("Connected to Database");
 });
 
+exports.getStudents = function(callback) {
+    // SQL Statement to get all students
+    var sql = `SELECT * FROM Student`;
+    // Execute the query
+    db.all(sql, function(err, rows) {
+        // Check for errors
+        if (err) {
+            return console.error(err.message);
+        }
+        // Create an array or students
+        var students = [];
+        // Loop through the data
+        for (var row of rows) {
+            var student = new student.Student(row.Student_ID, row.Student_Name, row.Date_of_Birth, row.Gender);
+            // Add the student to the array
+            students.push(student);
+        }
+        // Execute callback function
+        callback(students);
+    });
+};
+
 // create the function which extracts data from database and makes a new Student instance
 exports.getStudent = function(full_name, callback){
     var sql = `SELECT * FROM Student WHERE Student_Name="${full_name}"`;

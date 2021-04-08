@@ -16,6 +16,14 @@ const app = express();
 // Use static folder to server static files
 app.use(express.static("static"));
 
+// Add Endpoint for all students
+app.get("/students", function(req, res) {
+    // Return the data from getStudents function
+    data.getStudents(function(students) {
+        res.json(students);
+      });
+  });
+
 // Add Student Endpoint
 app.get("/student/:full_name", function(req, res){
     // Get Student by Name
