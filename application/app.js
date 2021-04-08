@@ -13,6 +13,8 @@ const express = require("express");
 // Create express app instance
 const app = express();
 
+app.use(express.json());
+
 // Use static folder to server static files
 app.use(express.static("static"));
 
@@ -31,6 +33,13 @@ app.get("/student/:full_name", function(req, res){
         res.json(studentName);
     });
 });
+
+app.put("/students", function(req, res) {
+    // Call addModule on data
+    data.updateStudent(req.body, function() {
+      res.send("OK");
+    });
+  });
 
 // Add Timetable Endpoint
 app.get("/timetable/:subject", function(req, res){

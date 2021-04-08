@@ -30,9 +30,9 @@ exports.getStudents = function(callback) {
         var students = [];
         // Loop through the data
         for (var row of rows) {
-            var student = new student.Student(row.Student_ID, row.Student_Name, row.Date_of_Birth, row.Gender);
+            var stud = new student.Student(row.Student_ID, row.Student_Name, row.Date_of_Birth, row.Gender);
             // Add the student to the array
-            students.push(student);
+            students.push(stud);
         }
         // Execute callback function
         callback(students);
@@ -50,6 +50,16 @@ exports.getStudent = function(full_name, callback){
         callback(newStudent);
     });
 }
+
+exports.updateStudent = function(student, callback) {
+    // Create SQL insert statement
+    var sql = `UPDATE Student SET Student_Name="${student.full_name}" WHERE Student_ID=${student.id}`;
+    // Execute SQL insert statement
+    db.exec(sql, function(err) {
+      // Once completed, execute callback function
+      callback();
+    });
+  };
 
 // create the function which extracts data from database and makes a new Teacher instance
 exports.getTeacher = function(teacher_name, callback){

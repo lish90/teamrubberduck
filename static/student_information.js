@@ -10,6 +10,17 @@ mainApp.controller("studentController", function($scope, $http){
         $http.get("/student/" + $scope.studentSearchBox).then(function(response){
             $scope.selectedStudent = response.data;
         });
-    }
+    };
+
+    $scope.studentUpdate = function() {
+        
+        $http.put("/students", $scope.selectedStudent).then(function(response) {
+          
+            $http.get("/student/" + $scope.selectedStudent.full_name).then(function(response){
+                $scope.selectedStudent = response.data;
+            });
+        });
+      };
+
 });
 
