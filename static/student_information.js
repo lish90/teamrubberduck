@@ -13,14 +13,11 @@ mainApp.controller("studentController", function($scope, $http){
     };
 
     $scope.studentUpdate = function() {
-        
         $http.put("/students", $scope.selectedStudent).then(function(response) {
-          
             $http.get("/student/" + $scope.selectedStudent.full_name).then(function(response){
                 $scope.selectedStudent = response.data;
             });
         });
       };
-
 });
 
