@@ -12,11 +12,11 @@ mainApp.controller("studentController", function($scope, $http){
         });
     };
 
+    // Create function that will update student information on Update button click
     $scope.studentUpdate = function() {
         $http.put("/students", $scope.selectedStudent).then(function(response) {
-            $http.get("/student/" + $scope.selectedStudent.full_name).then(function(response){
-                $scope.selectedStudent = response.data;
-            });
+            // Alert user
+            window.alert("Entry update.");
         });
       };
 });

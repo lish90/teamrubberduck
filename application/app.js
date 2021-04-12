@@ -26,6 +26,14 @@ app.get("/students", function(req, res) {
       });
   });
 
+// Add endpoint to update student data
+app.put("/students", function(req, res) {
+    // Call addModule on data
+    data.updateStudent(req.body, function() {
+      res.send("OK");
+    });
+  });
+
 // Add Student Endpoint
 app.get("/student/:full_name", function(req, res){
     // Get Student by Name
@@ -33,13 +41,6 @@ app.get("/student/:full_name", function(req, res){
         res.json(studentName);
     });
 });
-
-app.put("/students", function(req, res) {
-    // Call addModule on data
-    data.updateStudent(req.body, function() {
-      res.send("OK");
-    });
-  });
 
 // Add Timetable Endpoint
 app.get("/timetable/:subject", function(req, res){

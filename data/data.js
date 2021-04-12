@@ -17,6 +17,7 @@ var db = new sqlite3.Database("data/school2.db", function(err){
     console.log("Connected to Database");
 });
 
+// Create fuction to run query on database and get student information
 exports.getStudents = function(callback) {
     // SQL Statement to get all students
     var sql = `SELECT * FROM Student`;
@@ -51,9 +52,12 @@ exports.getStudent = function(full_name, callback){
     });
 }
 
+// Create function to run query and update student information
 exports.updateStudent = function(student, callback) {
     // Create SQL insert statement
-    var sql = `UPDATE Student SET Student_Name="${student.full_name}" WHERE Student_ID=${student.id}`;
+    var sql = `UPDATE Student 
+    SET Student_ID=${student.id}, Student_Name="${student.full_name}", Date_of_Birth="${student.dob}", Gender="${student.gender}"
+    WHERE Student_ID=${student.id}`;
     // Execute SQL insert statement
     db.exec(sql, function(err) {
       // Once completed, execute callback function
