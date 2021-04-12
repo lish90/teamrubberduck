@@ -50,20 +50,46 @@ exports.getStudent = function(full_name, callback){
         var newStudent = new student.Student(row.Student_ID, row.Student_Name, row.Date_of_Birth, row.Gender);
         callback(newStudent);
     });
-}
+};
 
 // Create function to run query and update student information
 exports.updateStudent = function(student, callback) {
-    // Create SQL insert statement
+    // Create SQL update statement
     var sql = `UPDATE Student 
-    SET Student_ID=${student.id}, Student_Name="${student.full_name}", Date_of_Birth="${student.dob}", Gender="${student.gender}"
+    SET Student_ID=${student.id},
+    Student_Name="${student.full_name}",
+    Date_of_Birth="${student.dob}",
+    Gender="${student.gender}"
     WHERE Student_ID=${student.id}`;
-    // Execute SQL insert statement
+    // Execute SQL update statement
     db.exec(sql, function(err) {
       // Once completed, execute callback function
       callback();
     });
   };
+
+// Create fuction to run query on database and get teacher information
+exports.getTeachers = function(callback) {
+    // SQL Statement to get all teachers
+    var sql = `SELECT * FROM Teacher`;
+    // Execute the query
+    db.all(sql, function(err, rows) {
+        // Check for errors
+        if (err) {
+            return console.error(err.message);
+        }
+        // Create an array or teachers
+        var teachers = [];
+        // Loop through the data
+        for (var row of rows) {
+            var teach = new student.Teacher(row.Teacher_ID, row.Teacher_Name, row.Subject, row.Years_Served, row.Salary, row.Street_Address, row.Postal_Code, row.Contact_Number);
+            // Add the student to the array
+            teachers.push(teach);
+        }
+        // Execute callback function
+        callback(teachers);
+    });
+};
 
 // create the function which extracts data from database and makes a new Teacher instance
 exports.getTeacher = function(teacher_name, callback){
@@ -75,7 +101,27 @@ exports.getTeacher = function(teacher_name, callback){
         var newTeacher = new student.Teacher(row.Teacher_ID, row.Teacher_Name, row.Subject, row.Years_Served, row.Salary, row.Street_Address, row.Postal_Code, row.Contact_Number);
         callback(newTeacher);
     });
-}
+};
+
+// Create function to run query and update student information
+exports.updateTeacher = function(teacher, callback) {
+    // Create SQL update statement
+    var sql = `UPDATE Teacher 
+    SET Teacher_ID="${teacher.id}",
+    Teacher_Name="${teacher.full_name}",
+    Subject="${teacher.teacher_subject}",
+    Years_Served=${teacher.years_served},
+    Salary=${teacher.salary}, 
+    Street_Address="${teacher.address}",
+    Postal_Code="${teacher.postal}",
+    Contact_Number="${teacher.number}"
+    WHERE Teacher_ID="${teacher.id}"`;
+    // Execute SQL update statement
+    db.exec(sql, function(err) {
+      // Once completed, execute callback function
+      callback();
+    });
+  };
 
 // create the function which extracts data from database and makes a new Timetable instance
 exports.getTimetable = function(subject, callback){
@@ -87,5 +133,5 @@ exports.getTimetable = function(subject, callback){
         var newTimetable = new student.Timetable(row.Class_ID, row.Teacher_ID, row.Subject, row.Room_Number, row.Day, row.Time);
         callback(newTimetable);
     });
-}
+};
 

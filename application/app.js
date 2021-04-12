@@ -28,7 +28,7 @@ app.get("/students", function(req, res) {
 
 // Add endpoint to update student data
 app.put("/students", function(req, res) {
-    // Call addModule on data
+    // Call function on data
     data.updateStudent(req.body, function() {
       res.send("OK");
     });
@@ -57,6 +57,22 @@ app.get("/teacher/:teacher_name", function(req, res){
         res.json(teacherName);
     });
 });
+
+// Add Endpoint for all teachers
+app.get("/teachers", function(req, res) {
+    // Return the data from getTeachers function
+    data.getTeachers(function(teachers) {
+        res.json(teachers);
+      });
+  });
+
+// Add endpoint to update teacher data
+app.put("/teachers", function(req, res) {
+    // Call function on data
+    data.updateTeacher(req.body, function() {
+      res.send("OK");
+    });
+  });
 
 // Start listening the server on port localhost:3000
 app.listen(3000, function(err){
