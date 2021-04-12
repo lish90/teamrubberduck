@@ -123,6 +123,29 @@ exports.updateTeacher = function(teacher, callback) {
     });
   };
 
+// Create fuction to run query on database and get timetable information
+exports.getTimetables = function(callback) {
+    // SQL Statement to get all timetables
+    var sql = `SELECT * FROM Timetable`;
+    // Execute the query
+    db.all(sql, function(err, rows) {
+        // Check for errors
+        if (err) {
+            return console.error(err.message);
+        }
+        // Create an array or students
+        var timetables = [];
+        // Loop through the data
+        for (var row of rows) {
+            var timetab = new student.Timetable(row.Class_ID, row.Teacher_ID, row.Subject, row.Room_Number, row.Day, row.Time);
+            // Add the student to the array
+            timetables.push(timetab);
+        }
+        // Execute callback function
+        callback(timetables);
+    });
+};
+
 // create the function which extracts data from database and makes a new Timetable instance
 exports.getTimetable = function(subject, callback){
     var sql = `SELECT * FROM Timetable WHERE Subject="${subject}"`;
@@ -135,3 +158,20 @@ exports.getTimetable = function(subject, callback){
     });
 };
 
+// Create function to run query and update timetable information
+exports.updateTimetable = function(timetable, callback) {
+    // Create SQL update statement
+    var sql = `UPDATE Timetable 
+    SET Class_ID="${timetable.class_id}",
+    Teacher_ID="${timetable.teacher_id}",
+    Subject="${timetable.subject}",
+    Room_Number="${timetable.room_number}",
+    Day="${timetable.day}",
+    Time="${timetable.time}"
+    WHERE Class_ID="${timetable.class_id}"`;
+    // Execute SQL update statement
+    db.exec(sql, function(err) {
+      // Once completed, execute callback function
+      callback();
+    });
+  };

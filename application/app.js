@@ -42,6 +42,22 @@ app.get("/student/:full_name", function(req, res){
     });
 });
 
+// Add Endpoint for all timetables
+app.get("/timetables", function(req, res) {
+  // Return the data from getTimetables function
+  data.getTimetables(function(timetables) {
+      res.json(timetables);
+    });
+});
+
+// Add endpoint to update timetable data
+app.put("/timetables", function(req, res) {
+  // Call function on data
+  data.updateTimetable(req.body, function() {
+    res.send("OK");
+  });
+});
+
 // Add Timetable Endpoint
 app.get("/timetable/:subject", function(req, res){
     // Get Timetable by Subject

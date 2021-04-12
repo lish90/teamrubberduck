@@ -16,7 +16,7 @@ mainApp.controller("teacherController", function($scope, $http){
     $scope.teacherUpdate = function() {
         $http.put("/teachers", $scope.selectedTeacher).then(function(response) {
             // Alert user
-            window.alert("Entry update.");
+            window.alert("Entry updated.");
         });
       };
 });
