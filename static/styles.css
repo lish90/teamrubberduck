@@ -41,6 +41,12 @@ h1 {
 	top:1px;
 }
 
+.greenButton:disabled,
+greenButton[disabled]{
+  background-color: #cccccc;
+  border:1px solid #cccccc;
+}
+
 .redButton {
 	background-color:#c74545;
 	border-radius:5px;

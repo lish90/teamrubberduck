@@ -14,46 +14,48 @@
     </div>
     <div class="container">
         <div ng-app="mainApp" ng-controller="timetableController">
-            <table>
-                <tr>
-                    <td colspan="2" style="text-align: center"><h1>Timetable</h1></td>
-                </tr>
-                <tr>
-                    <td>Search Timetable:</td>
-                    <td>
-                        <input type="text" ng-model="timetableSearchBox">
-                        <input type="button" value="Search" class="blueButton" ng-click="timetableSearchButton()">
-                    </td>
-                <tr>
-                    <td>Class ID:</td>
-                    <td><input type="text" ng-model="selectedTimetable.class_id" disabled></td>
-                </tr>
-                <tr>
-                    <td>Teacher ID:</td>
-                    <td><input type="text" ng-model="selectedTimetable.teacher_id"></td>
-                </tr>
-                <tr>
-                    <td>Subject:</td>
-                    <td><input type="text" ng-model="selectedTimetable.subject"></td>
-                </tr>
-                <tr>
-                    <td>Room Number:</td>
-                    <td><input type="text" ng-model="selectedTimetable.room_number"></td>
-                </tr>
-                <tr>
-                    <td>Day:</td>
-                    <td><input type="text" ng-model="selectedTimetable.day"></td>
-                </tr>
-                <tr>
-                    <td>Time:</td>
-                    <td><input type="text" ng-model="selectedTimetable.time"></td>
-                </tr>
-                <tr>
-                    <td colspan="2"><input type="button" value="Create Record" class="orangeButton" ng-click="timetableCreate">
-                    <input type="button" value="Update Record" class="greenButton" ng-click="timetableUpdate()">
-                    <input type="button" value="Delete Record" class="redButton" ng-click="timetableDelete"></td>
-                </tr>
-            </table>
+            <form name="form">
+                <table>
+                    <tr>
+                        <td colspan="2" style="text-align: center"><h1>Timetable</h1></td>
+                    </tr>
+                    <tr>
+                        <td>Search Timetable:</td>
+                        <td>
+                            <input type="text" ng-model="timetableSearchBox">
+                            <input type="button" value="Search" class="blueButton" ng-click="timetableSearchButton()">
+                        </td>
+                    <tr>
+                        <td>Class ID:</td>
+                        <td><input type="text" ng-model="selectedTimetable.class_id" disabled></td>
+                    </tr>
+                    <tr>
+                        <td>Teacher ID:</td>
+                        <td><input type="text" ng-model="selectedTimetable.teacher_id"></td>
+                    </tr>
+                    <tr>
+                        <td>Subject:</td>
+                        <td><input type="text" ng-model="selectedTimetable.subject"></td>
+                    </tr>
+                    <tr>
+                        <td>Room Number:</td>
+                        <td><input type="text" ng-model="selectedTimetable.room_number"></td>
+                    </tr>
+                    <tr>
+                        <td>Day:</td>
+                        <td><input type="text" ng-model="selectedTimetable.day"></td>
+                    </tr>
+                    <tr>
+                        <td>Time:</td>
+                        <td><input type="text" ng-model="selectedTimetable.time"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="button" value="Create Record" class="orangeButton" ng-click="timetableCreate">
+                        <input type="button" value="Update Record" class="greenButton" ng-click="timetableUpdate()" ng-disabled="!selectedTimetable.teacher_id || !selectedTimetable.subject || !selectedTimetable.room_number || !selectedTimetable.day || !selectedTimetable.time">
+                        <input type="button" value="Delete Record" class="redButton" ng-click="timetableDelete"></td>
+                    </tr>
+                </table>
+            </form>
         </div>
     </div>
 </body>
