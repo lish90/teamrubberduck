@@ -175,3 +175,13 @@ exports.updateTimetable = function(timetable, callback) {
       callback();
     });
   };
+// Add a module to the database
+exports.addTeachers = function(teacher, callback) {
+    // Create SQL insert statement
+    var sql = `INSERT INTO Teacher VALUES ('${teacher.id}', '${teacher.full_name}', '${teacher.teacher_subject}', ${teacher.years_served}, ${teacher.salary}, '${teacher.address}', '${teacher.postal}', '${teacher.number}')`;
+    // Execute SQL insert statement
+    db.exec(sql, function(err) {
+      // Once completed, execute callback function
+      callback();
+    });
+  };

@@ -27,7 +27,7 @@
                         </td>
                     <tr>
                         <td>ID:</td>
-                        <td><input type="text" ng-model="selectedTeacher.id" disabled></td>
+                        <td><input type="text" ng-model="selectedTeacher.id" ></td>
                     </tr>
                     <tr>
                         <td>Full Name:</td>
@@ -58,7 +58,7 @@
                         <td><input type="text" ng-model="selectedTeacher.number"></td>
                     </tr>
                     <tr>
-                        <td colspan="2"><input type="button" value="Create Record" class="orangeButton" ng-click="teacherCreate">
+                        <td colspan="2"><input type="button" value="Create Record" class="orangeButton" ng-click="teacherCreate()" ng-disabled="!selectedTeacher.full_name || !selectedTeacher.teacher_subject || !selectedTeacher.years_served || !selectedTeacher.salary || !selectedTeacher.address || !selectedTeacher.postal || !selectedTeacher.number">
                         <input type="button" value="Update Record" class="greenButton" ng-click="teacherUpdate()" ng-disabled="!selectedTeacher.full_name || !selectedTeacher.teacher_subject || !selectedTeacher.years_served || !selectedTeacher.salary || !selectedTeacher.address || !selectedTeacher.postal || !selectedTeacher.number">
                         <input type="button" value="Delete Record" class="redButton" ng-click="teacherDelete"></td>
                     </tr>

@@ -90,6 +90,14 @@ app.put("/teachers", function(req, res) {
     });
   });
 
+// Add /teachers post endpoint
+app.post("/teachers", function(req, res) {
+  // Call addModule on data
+  data.addTeachers(req.body, function() {
+    res.send("OK");
+  });
+});
+
 // Start listening the server on port localhost:3000
 app.listen(3000, function(err){
     if(err) {

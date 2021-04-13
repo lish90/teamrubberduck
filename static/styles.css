@@ -109,6 +109,12 @@ greenButton[disabled]{
 	position:relative;
 	top:1px;
 }
+.orangeButton:disabled,
+orangeButton[disabled]{
+  background-color: #cccccc;
+  border:1px solid #cccccc;
+}
+
 
 .topnav {
 	overflow: hidden;
