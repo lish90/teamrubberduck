@@ -19,4 +19,14 @@ mainApp.controller("teacherController", function($scope, $http){
             window.alert("Entry updated.");
         });
       };
+
+      // Create function to create new teacher info on Create button click
+    $scope.teacherCreate = function() {
+        $http.post("/teachers", $scope.new_teacher).then(function(response) {
+            $scope.new_teacher = new Teacher("", "");
+            $http.get("/teachers").then(function(response) {
+                $scope.teachers = response.data;
+            });
+        });
+    };
 });
