@@ -23,6 +23,7 @@ mainApp.controller("teacherController", function($scope, $http){
       // Create function to create new teacher info on Create button click
     $scope.teacherCreate = function() {
         $http.post("/teachers", $scope.selectedTeacher).then(function(response) {
+            // Alert user
             window.alert("Entry created.");
         });
     };
