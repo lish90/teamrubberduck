@@ -19,5 +19,12 @@ mainApp.controller("studentController", function($scope, $http){
             window.alert("Entry updated.");
         });
       };
+    // Create function to create new student info on Create button click
+    $scope.studentCreate = function() {
+        $http.post("/students", $scope.selectedStudent).then(function(response) {
+            // Alert user
+            window.alert("Entry created.");
+        });
+    };
 });
 
