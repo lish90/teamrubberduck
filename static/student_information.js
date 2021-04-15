@@ -21,7 +21,7 @@ mainApp.controller("studentController", function($scope, $http){
       };
     // Create function to create new student info on Create button click
     $scope.studentCreate = function() {
-        $http.post("/students", $scope.selectedStudent).then(function(response) {
+        $http.post("/student", $scope.selectedStudent).then(function(response) {
             // Alert user
             window.alert("Entry created.");
         });
