@@ -175,7 +175,7 @@ exports.updateTimetable = function(timetable, callback) {
       callback();
     });
   };
-// Add a module to the database
+// Add a Teacher module to the database
 exports.addTeachers = function(teacher, callback) {
     // Create SQL insert statement
     var sql = `INSERT INTO Teacher VALUES ('${teacher.id}', '${teacher.full_name}', '${teacher.teacher_subject}', ${teacher.years_served}, ${teacher.salary}, '${teacher.address}', '${teacher.postal}', '${teacher.number}')`;
@@ -183,5 +183,16 @@ exports.addTeachers = function(teacher, callback) {
     db.exec(sql, function(err) {
       // Once completed, execute callback function
       callback();
-    });
+    });  
   };
+
+// Add a Student module to the database
+exports.addStudents = function(student, callback) {
+    // Create SQL insert statement
+    var sql = `INSERT INTO Student VALUES ('${student.id}', '${student.full_name}', '${student.dob}', '${student.gender}')`;
+    // Execute SQL insert statement
+    db.exec(sql, function(err) {
+      // Once completed, execute callback function
+      callback();
+    });
+};
