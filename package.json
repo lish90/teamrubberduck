@@ -1,4 +1,5 @@
 {
+  "//": ["Build and run docker and go to localhost:<port>/student_information.html to see the form."],
   "name": "teamrubberduck",
   "version": "0.0.1",
   "description": "Student database application written in JavaScript.",
