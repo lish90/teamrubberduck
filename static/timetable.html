@@ -50,7 +50,7 @@
                         <td><input type="text" ng-model="selectedTimetable.time"></td>
                     </tr>
                     <tr>
-                        <td colspan="2"><input type="button" value="Create Record" class="orangeButton" ng-click="timetableCreate">
+                        <td colspan="2"><input type="button" value="Create Record" class="orangeButton" ng-click="timetableCreate()" ng-disabled="!selectedTimetable.teacher_id || !selectedTimetable.subject || !selectedTimetable.room_number || !selectedTimetable.day || !selectedTimetable.time">
                         <input type="button" value="Update Record" class="greenButton" ng-click="timetableUpdate()" ng-disabled="!selectedTimetable.teacher_id || !selectedTimetable.subject || !selectedTimetable.room_number || !selectedTimetable.day || !selectedTimetable.time">
                         <input type="button" value="Delete Record" class="redButton" ng-click="timetableDelete"></td>
                     </tr>

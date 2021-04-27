@@ -195,4 +195,14 @@ exports.addStudents = function(student, callback) {
       // Once completed, execute callback function
       callback();
     });
+
+// Add a Timetable module to the database
+exports.addTimetables = function(timetable, callback) {
+    // Create SQL insert statement
+    var sql = `INSERT INTO Timetable VALUES ('${timetable.class_id}', '${timetable.teacher_id}', '${timetable.subject}', '${timetable.room_number}', '${timetable.day}', '${timetable.time})`;
+    // Execute SQL insert statement
+    db.exec(sql, function(err) {
+      // Once completed, execute callback function
+      callback();
+    });
 };
