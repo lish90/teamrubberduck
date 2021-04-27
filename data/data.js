@@ -64,9 +64,9 @@ exports.updateStudent = function(student, callback) {
     // Execute SQL update statement
     db.exec(sql, function(err) {
       // Once completed, execute callback function
-      callback();
+    callback();
     });
-  };
+};
 
 // Create fuction to run query on database and get teacher information
 exports.getTeachers = function(callback) {
@@ -119,9 +119,9 @@ exports.updateTeacher = function(teacher, callback) {
     // Execute SQL update statement
     db.exec(sql, function(err) {
       // Once completed, execute callback function
-      callback();
+    callback();
     });
-  };
+};
 
 // Create fuction to run query on database and get timetable information
 exports.getTimetables = function(callback) {
@@ -172,9 +172,9 @@ exports.updateTimetable = function(timetable, callback) {
     // Execute SQL update statement
     db.exec(sql, function(err) {
       // Once completed, execute callback function
-      callback();
+    callback();
     });
-  };
+};
 // Add a Teacher module to the database
 exports.addTeachers = function(teacher, callback) {
     // Create SQL insert statement
@@ -182,9 +182,9 @@ exports.addTeachers = function(teacher, callback) {
     // Execute SQL insert statement
     db.exec(sql, function(err) {
       // Once completed, execute callback function
-      callback();
+    callback();
     });  
-  };
+};
 
 // Add a Student module to the database
 exports.addStudents = function(student, callback) {
@@ -193,8 +193,9 @@ exports.addStudents = function(student, callback) {
     // Execute SQL insert statement
     db.exec(sql, function(err) {
       // Once completed, execute callback function
-      callback();
+    callback();
     });
+};  
 
 // Add a Timetable module to the database
 exports.addTimetables = function(timetable, callback) {

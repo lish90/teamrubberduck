@@ -26,4 +26,5 @@ mainApp.controller("timetableController", function($scope, $http){
             // Alert user
             window.alert("Entry created.");
         });
+    };    
 });
