@@ -1,8 +1,24 @@
 body {
     background-image: url("./login_background.png");
     background-repeat: no-repeat;
-    background-position: left;
+    background-position: left top;
     background-attachment: fixed;
     background-color: #6c5ce7;
-    background-size: contain;    
+    background-size: 670px;    
+}
+
+.container {
+    margin-left: 700px;
+}
+
+.LoginButton {
+    background-color:#55EFC4;
+	border-radius:5px;
+	display:inline-block;
+	cursor:pointer;
+	color: #6c5ce7;
+	font-family:Arial;
+	font-size:13px;
+	padding:09px 50px;
+
 }
