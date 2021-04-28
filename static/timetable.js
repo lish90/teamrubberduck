@@ -20,4 +20,11 @@ mainApp.controller("timetableController", function($scope, $http){
         });
     };
 
+    // Create function to create new teacher info on Create button click
+    $scope.teacherCreate = function() {
+        $http.post("/timetabless", $scope.selectedTimetable).then(function(response) {
+            // Alert user
+            window.alert("Entry created.");
+        });
+    };    
 });
